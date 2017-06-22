@@ -9,8 +9,8 @@ Live demo: https://starter.nuxtjs.org
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ``` bash
-$ vue init nuxt/starter my-project  
-$ cd my-project                     
+$ vue init guangzhoushanyougame/template-ssr my-project
+$ cd my-project
 # install dependencies
 $ npm install # Or yarn install
 ```
@@ -32,7 +32,7 @@ Go to [http://localhost:3000](http://localhost:3000)
 
 ``` bash
 # build for production and launch the server
-$ npm run build
+$ npm run deploy
 $ npm start
 ```
 

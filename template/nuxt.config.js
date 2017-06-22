@@ -1,38 +1,55 @@
+var path = require('path')
+
+var projectSrc = path.join(__dirname, 'src')
+
 module.exports = {
-  /*
-  ** Headers of the page
-  */
-  head: {
-    title: 'starter',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** Run ESLINT on save
-    */
-    extend (config, ctx) {
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+    srcDir: 'src/',
+
+    htmlAttrs: {
+        lang: 'zh-CN'
+    },
+
+    head: {
+        title: 'starter',
+        meta: [
+            { charset: 'UTF-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+        ],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        ]
+    },
+
+    loading: { color: '#3B8070' },
+
+    build: {
+        // Uncomment to use CDN
+        // publicPath: '//img-2.24haowan.shanyougame.com/24haowan/**** PROJECT FOLDER ****/',
+
+        /*
+        ** Run ESLINT on save
+        */
+        extend(config, ctx) {
+            if (ctx.isClient) {
+                config.module.rules.push({
+                    enforce: 'pre',
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    exclude: /(node_modules)/
+                })
+            },
+
+            config.resolve.alias['~imgs'] = path.join(projectSrc, 'assets/imgs')
+            config.resolve.alias['imgs'] = path.join(projectSrc, 'assets/imgs')
+            config.resolve.alias['~styles'] = path.join(projectSrc, 'assets/styles')
+            config.resolve.alias['styles'] = path.join(projectSrc, 'assets/styles')
+            config.resolve.alias['~24haowan'] = path.join(projectSrc, 'libraries/24haowan')
+            config.resolve.alias['24haowan'] = path.join(projectSrc, 'libraries/24haowan')
+
+            config.resolve.alias['~utils'] = path.join(projectSrc, 'utils')
+            config.resolve.alias['~io'] = path.join(projectSrc, 'io')
+            config.resolve.alias['~assets'] = path.join(projectSrc, 'assets')
+        }
     }
-  }
 }
