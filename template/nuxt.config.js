@@ -24,6 +24,11 @@ module.exports = {
     loading: { color: '#3B8070' },
 
     build: {
+        filenames: {
+            vendor: 'vendor.[chunkhash].js',
+            app: 'app.[chunkhash].js'
+        },
+
         // Uncomment to use CDN
         // publicPath: '//img-2.24haowan.shanyougame.com/24haowan/**** PROJECT FOLDER ****/',
 
@@ -40,10 +45,6 @@ module.exports = {
                 })
             }
 
-            config.resolve.alias['~imgs'] = path.join(projectSrc, 'assets/imgs')
-            config.resolve.alias['imgs'] = path.join(projectSrc, 'assets/imgs')
-            config.resolve.alias['~styles'] = path.join(projectSrc, 'assets/styles')
-            config.resolve.alias['styles'] = path.join(projectSrc, 'assets/styles')
             config.resolve.alias['~24haowan'] = path.join(projectSrc, 'libraries/24haowan')
             config.resolve.alias['24haowan'] = path.join(projectSrc, 'libraries/24haowan')
 
