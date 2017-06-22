@@ -38,7 +38,7 @@ module.exports = {
                     loader: 'eslint-loader',
                     exclude: /(node_modules)/
                 })
-            },
+            }
 
             config.resolve.alias['~imgs'] = path.join(projectSrc, 'assets/imgs')
             config.resolve.alias['imgs'] = path.join(projectSrc, 'assets/imgs')
