@@ -45,8 +45,8 @@ module.exports = {
                 })
             }
 
-            config.resolve.alias['~24haowan'] = path.join(projectSrc, 'libraries/24haowan')
-            config.resolve.alias['24haowan'] = path.join(projectSrc, 'libraries/24haowan')
+            config.resolve.alias['~24'] = path.join(projectSrc, 'libraries/24')
+            config.resolve.alias['24'] = path.join(projectSrc, 'libraries/24')
 
             config.resolve.alias['~utils'] = path.join(projectSrc, 'utils')
             config.resolve.alias['~io'] = path.join(projectSrc, 'io')
