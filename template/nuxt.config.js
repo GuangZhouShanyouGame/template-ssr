@@ -45,12 +45,7 @@ module.exports = {
                 })
             }
 
-            config.resolve.alias['~24'] = path.join(projectSrc, 'libraries/24')
-            config.resolve.alias['24'] = path.join(projectSrc, 'libraries/24')
-
-            config.resolve.alias['~utils'] = path.join(projectSrc, 'utils')
-            config.resolve.alias['~io'] = path.join(projectSrc, 'io')
-            config.resolve.alias['~assets'] = path.join(projectSrc, 'assets')
+            config.resolve.alias['@'] = path.join(projectSrc, 'libraries/24')
         }
     }
 }
